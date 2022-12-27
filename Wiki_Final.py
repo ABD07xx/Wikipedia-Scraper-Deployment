@@ -51,9 +51,5 @@ if inp is not None:
     if st.checkbox("Show/Hide"):
         st.text(paragraphs)
     
-    status2 = st.radio("Do you want to save this text?",("False","True"))
-    if status2 =='True':
-        fd = open(heading + ".txt" , 'w',encoding='utf-8')
-        fd.write(paragraphs)
-        fd.close()
-        st.text("File Saved")
+    
+    st.download_button('Download the text file', paragraphs)
